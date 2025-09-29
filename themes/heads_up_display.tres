@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cttiu3jxq5lo4"]
+
+[ext_resource type="FontFile" uid="uid://dw5l2gnsenr8v" path="res://fonts/Xolonium-Regular.ttf" id="1_o6gi1"]
+
+[resource]
+default_font = ExtResource("1_o6gi1")
+default_font_size = 64
