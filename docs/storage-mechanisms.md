@@ -1,0 +1,12 @@
+## Storage Merchanisms
+
+For this part of the project, I programmed a way for players to change their controls.
+
+### Configuration File (Godot)
+In Godot, developers can work with a configuration file that is usually saved to the relative directory path `user://`. This configuration file uses the [INI](https://en.wikipedia.org/wiki/INI_file)-style formatting as stated in the [docs](https://docs.godotengine.org/en/stable/classes/class_configfile.html#class-configfile). Because of its simplicity, I decided to go with this option to store the user's control settings which would be one advantage of using a configuration file. It also already has built-in support for parsing and loading, so no extra logic was needed for me to code. The downside of using a configuration file is its easy accessibility; storing sensitive data inside this would not be ideal.
+
+### Relational Database
+Another storage mechanism I could've used was a relational database. I have experience designing and running PostgreSQL locally, so setting up wouldn't have been much of an issue. However, the reason I didn't choose this method was because of the extra research I would have to put into connecting to the database even just locally. I'm already aware that it uses ports and the local IP address, but needing to use the socket API from Godot didn't sound appealing to me. Plus, simply storing controls wouldn't require such a robust solution. Relational data is more ideal for structured data that have relationships with one another - control schemes certainly don't need relationships (at least for my game).
+
+### Registry Keys
+This was an interesting one for me to consider. I've actually explored the registry keys for game specific configurations before, and I was surprised to see how it's done. The games I've seen these used in, Genshin Impact and Honkai: Star Rail, mainly store game settings such as framerate, resolution, and other configurations. This would've been a viable option besides a configuration file; however, similar to a relational database, I would need to implement more code just to get a similar result to the configuration file. I do think, though, that registry keys are more universal and could allow games under the same developer to access information about another title within the same series. I didn't end up choosing this option, but it would be one I'd want to explore more in the future.
