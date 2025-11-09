@@ -1,10 +1,11 @@
-[gd_scene load_steps=39 format=3 uid="uid://dijmjd3qxp12f"]
+[gd_scene load_steps=40 format=3 uid="uid://dijmjd3qxp12f"]
 
 [ext_resource type="Texture2D" uid="uid://dyqrhccfobwbp" path="res://assets/sprites/template-idle-sheet.png" id="1_rp718"]
 [ext_resource type="Script" uid="uid://capt4cs370xiy" path="res://scripts/player.gd" id="1_yewv4"]
 [ext_resource type="AnimationNodeBlendSpace2D" uid="uid://c63n5ylmndgvs" path="res://animations/player_idle_blend.tres" id="2_dyp2m"]
 [ext_resource type="Script" uid="uid://ods2y6tg7ba5" path="res://scripts/player_animation_tree.gd" id="3_76oj4"]
 [ext_resource type="Texture2D" uid="uid://r2ywruddutay" path="res://assets/sprites/template-walk-sheet.png" id="3_dyp2m"]
+[ext_resource type="Script" uid="uid://dy7bgaj0gx0io" path="res://scripts/health_component.gd" id="6_kqtwu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yewv4"]
 radius = 8.0
@@ -780,5 +781,8 @@ vframes = 5
 [node name="PlayerAnimation" type="Node2D" parent="." node_paths=PackedStringArray("animation_tree")]
 script = ExtResource("3_76oj4")
 animation_tree = NodePath("../AnimationTree")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("6_kqtwu")
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
