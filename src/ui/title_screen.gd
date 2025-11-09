@@ -21,7 +21,7 @@ func _ready() -> void:
 	print("Controls loaded!")
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/test-scene.tscn")
+	get_tree().change_scene_to_file("res://src/levels/test-scene.tscn")
 
 func _on_settings_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/settings_menu.tscn")
+	get_tree().change_scene_to_file("res://src/ui/settings_menu.tscn")

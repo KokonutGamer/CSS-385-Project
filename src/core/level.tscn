@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cf21wfveoxssp"]
 
-[ext_resource type="Script" uid="uid://ycloiv8pefbk" path="res://scripts/classes/level.gd" id="1_2q6dc"]
-[ext_resource type="TileSet" uid="uid://vl5bxjxn266l" path="res://tilesets/grassy.tres" id="2_w7c3h"]
-[ext_resource type="PackedScene" uid="uid://dijmjd3qxp12f" path="res://scenes/characters/player.tscn" id="3_w8frs"]
+[ext_resource type="Script" uid="uid://ycloiv8pefbk" path="res://src/core/level.gd" id="1_2q6dc"]
+[ext_resource type="TileSet" uid="uid://vl5bxjxn266l" path="res://resources/tilesets/grassy.tres" id="2_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://dijmjd3qxp12f" path="res://src/player/player.tscn" id="3_w8frs"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_2q6dc")

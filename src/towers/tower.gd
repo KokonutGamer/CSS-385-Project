@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 @onready var main = get_tree().get_root().get_node("TestScene")
-@onready var projectile = load("res://scenes/projectile.tscn")
+@onready var projectile = load("res://src/towers/projectile.tscn")
 
 @export var projectile_spawn_position: Vector2
 @export var projectile_direction: float

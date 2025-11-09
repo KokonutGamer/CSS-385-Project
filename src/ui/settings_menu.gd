@@ -89,7 +89,7 @@ func _update_labels() -> void:
 		move_right_label.text = ""
 
 func _on_back_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/title_screen.tscn")
+	get_tree().change_scene_to_file("res://src/ui/title_screen.tscn")
 	_save_controls()
 	
 func _save_controls() -> void:

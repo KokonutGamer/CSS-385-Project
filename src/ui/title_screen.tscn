@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dm8r78mdrx4dx"]
 
-[ext_resource type="Script" uid="uid://cf3u4rol8xf4i" path="res://scripts/title_screen.gd" id="1_fgkus"]
+[ext_resource type="Script" uid="uid://cf3u4rol8xf4i" path="res://src/ui/title_screen.gd" id="1_fgkus"]
 
 [sub_resource type="SystemFont" id="SystemFont_1a2ex"]
 font_names = PackedStringArray("Fantasy")
