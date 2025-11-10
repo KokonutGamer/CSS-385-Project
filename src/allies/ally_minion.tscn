@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bh5444jejx23j"]
+[gd_scene load_steps=20 format=3 uid="uid://bh5444jejx23j"]
 
 [ext_resource type="Texture2D" uid="uid://dyi3eqjymdqvh" path="res://assets/sprites/minion-walk-sheet.png" id="1_8glim"]
 
@@ -140,8 +140,8 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_miquy"]
-resource_name = "walk-down-right"
-length = 0.8
+resource_name = "idle-down"
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -150,18 +150,144 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [28, 29, 30, 31]
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_q583r"]
+resource_name = "idle-down-left"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_15f31"]
+resource_name = "idle-left"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_ylq88"]
+resource_name = "idle-up-left"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+
+[sub_resource type="Animation" id="Animation_nrnp8"]
+resource_name = "idle-up"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [16]
+}
+
+[sub_resource type="Animation" id="Animation_uo6af"]
+resource_name = "idle-up-right"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [20]
+}
+
+[sub_resource type="Animation" id="Animation_w2uh6"]
+resource_name = "idle-right"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [24]
+}
+
+[sub_resource type="Animation" id="Animation_sj27d"]
+resource_name = "idle-down-right"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [28]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w64wn"]
 _data = {
 &"RESET": SubResource("Animation_khete"),
+&"idle-down": SubResource("Animation_miquy"),
+&"idle-down-left": SubResource("Animation_q583r"),
+&"idle-down-right": SubResource("Animation_sj27d"),
+&"idle-left": SubResource("Animation_15f31"),
+&"idle-right": SubResource("Animation_w2uh6"),
+&"idle-up": SubResource("Animation_nrnp8"),
+&"idle-up-left": SubResource("Animation_ylq88"),
+&"idle-up-right": SubResource("Animation_uo6af"),
 &"walk-down": SubResource("Animation_8glim"),
 &"walk-down-left": SubResource("Animation_w64wn"),
-&"walk-down-right": SubResource("Animation_miquy"),
 &"walk-left": SubResource("Animation_3jegg"),
 &"walk-right": SubResource("Animation_at6hk"),
 &"walk-up": SubResource("Animation_rhxhi"),
