@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bh5444jejx23j"]
+[gd_scene load_steps=57 format=3 uid="uid://bh5444jejx23j"]
 
 [ext_resource type="Texture2D" uid="uid://dyi3eqjymdqvh" path="res://assets/sprites/minion-walk-sheet.png" id="1_8glim"]
 [ext_resource type="Script" uid="uid://ds8l31gxvq7cx" path="res://src/allies/ally_minion.gd" id="1_rhxhi"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://0g20nv7ng1jp" path="res://src/util/state_machine.gd" id="7_hwlfh"]
 [ext_resource type="Script" uid="uid://cy2hx323a5kvg" path="res://src/allies/chasing.gd" id="8_at6hk"]
 [ext_resource type="Script" uid="uid://dy7bgaj0gx0io" path="res://src/core/health_component.gd" id="9_miquy"]
+[ext_resource type="Script" uid="uid://mbpcncaqb553" path="res://src/allies/attacking.gd" id="9_q583r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p6pu4"]
 radius = 5.0990195
@@ -1175,6 +1176,10 @@ metadata/_custom_type_script = "uid://0g20nv7ng1jp"
 
 [node name="Chasing" type="Node" parent="StateMachine"]
 script = ExtResource("8_at6hk")
+metadata/_custom_type_script = "uid://2x7363a43o7c"
+
+[node name="Attacking" type="Node" parent="StateMachine"]
+script = ExtResource("9_q583r")
 metadata/_custom_type_script = "uid://2x7363a43o7c"
 
 [node name="HealthComponent" type="Node" parent="."]

@@ -1,8 +1,8 @@
 class_name AllyMinionState extends State
 
-const IDLE = "idle"
-const CHASING = "chasing"
-const ATTACKING = "attacking"
+const IDLE = "Idle"
+const CHASING = "Chasing"
+const ATTACKING = "Attacking"
 
 var minion : AllyMinion
 
