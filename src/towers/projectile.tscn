@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8dex3q4oht20"]
+[gd_scene load_steps=6 format=3 uid="uid://b8dex3q4oht20"]
 
 [ext_resource type="Texture2D" uid="uid://bdvvsmpndm8bd" path="res://assets/sprites/red-ball.png" id="1_c8fcr"]
 [ext_resource type="Script" uid="uid://cusng85k82drg" path="res://src/towers/projectile.gd" id="1_q3m7n"]
+[ext_resource type="Script" uid="uid://cjlvaq0dxdi0c" path="res://src/towers/projectile_hurtbox.gd" id="3_r7t62"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c8fcr"]
 radius = 4.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_80o37"]
+radius = 4.1231055
+
 [node name="Projectile" type="CharacterBody2D"]
+collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_q3m7n")
 
@@ -14,5 +19,12 @@ script = ExtResource("1_q3m7n")
 texture_filter = 1
 texture = ExtResource("1_c8fcr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="ProjectileShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_c8fcr")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+script = ExtResource("3_r7t62")
+metadata/_custom_type_script = "uid://b3rp8l1hmj0ob"
+
+[node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_80o37")
