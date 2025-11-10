@@ -1,0 +1,177 @@
+[gd_scene load_steps=25 format=4 uid="uid://jnht6gwl5wv6"]
+
+[ext_resource type="TileSet" uid="uid://vl5bxjxn266l" path="res://resources/tilesets/grassy.tres" id="1_3jrdw"]
+[ext_resource type="Script" uid="uid://b470y7praecsn" path="res://src/levels/test_scene.gd" id="1_m1wh6"]
+[ext_resource type="Script" uid="uid://4wvgw7ka7lks" path="res://src/levels/tile_map_layer.gd" id="2_7ngua"]
+[ext_resource type="PackedScene" uid="uid://dijmjd3qxp12f" path="res://src/player/player.tscn" id="3_v0jcd"]
+[ext_resource type="PackedScene" uid="uid://bh5444jejx23j" path="res://src/allies/ally_minion.tscn" id="4_m1wh6"]
+[ext_resource type="Script" uid="uid://cgkm4q5wbos34" path="res://src/towers/tower.gd" id="5_pjq1b"]
+[ext_resource type="Texture2D" uid="uid://by132kdgo8p56" path="res://assets/sprites/red-moon-tower-sheet.png" id="6_n3mjx"]
+[ext_resource type="Script" uid="uid://dy7bgaj0gx0io" path="res://src/core/health_component.gd" id="7_7ngua"]
+[ext_resource type="Script" uid="uid://b3rp8l1hmj0ob" path="res://src/core/hurtbox.gd" id="8_v0jcd"]
+[ext_resource type="PackedScene" uid="uid://cktifyra5t566" path="res://src/levels/heads_up_display.tscn" id="10_pjq1b"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vgf4w"]
+vertices = PackedVector2Array(-3.3125, 387.39844, -81.22656, 350.8828, -51.5, 306.28125, 25.296875, 347.17188, 407.02344, 104.75, 473.97656, 136.71875, 496.82813, 174.8125, 355.6172, 244.07813, 325.57813, 197.03125, -132.17188, 356.1797, -494.85938, 172.92969, -472.96875, 136.70313, -407, 104.71875, -101.59375, 313, -61.25, 294.78125, -376.95313, 55.632813, -0.9765625, -134.78906, 55, -22.179688, 55, -9.8203125, 139, -9.8203125, 139, -22.179688, 376.95313, 55.640625, 97, -43.179688, 97, 11.1796875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 10, 11, 12, 13), PackedInt32Array(14, 13, 12, 15, 16, 17, 18), PackedInt32Array(8, 19, 20, 21, 4), PackedInt32Array(16, 21, 20, 22), PackedInt32Array(16, 22, 17), PackedInt32Array(14, 18, 23, 3, 2), PackedInt32Array(19, 8, 3, 23)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1, -146, -384, 48, -414, 97, -480, 129, -509, 177, -129, 369, -95, 321, -64, 307, -96, 355, 0, 400, 32, 355, 322, 210, 352, 257, 511, 179, 481, 129, 414, 97, 384, 48)])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81352"]
+atlas = ExtResource("6_n3mjx")
+region = Rect2(0, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gmwy"]
+atlas = ExtResource("6_n3mjx")
+region = Rect2(100, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh0gb"]
+atlas = ExtResource("6_n3mjx")
+region = Rect2(200, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyd17"]
+atlas = ExtResource("6_n3mjx")
+region = Rect2(300, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vax5a"]
+atlas = ExtResource("6_n3mjx")
+region = Rect2(400, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sdcb"]
+atlas = ExtResource("6_n3mjx")
+region = Rect2(500, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eht18"]
+atlas = ExtResource("6_n3mjx")
+region = Rect2(600, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we631"]
+atlas = ExtResource("6_n3mjx")
+region = Rect2(700, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx3kl"]
+atlas = ExtResource("6_n3mjx")
+region = Rect2(800, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo4g5"]
+atlas = ExtResource("6_n3mjx")
+region = Rect2(900, 0, 100, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc8d0"]
+atlas = ExtResource("6_n3mjx")
+region = Rect2(1000, 0, 100, 140)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8w0vv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81352")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gmwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh0gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyd17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vax5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sdcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eht18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we631")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx3kl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo4g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dc8d0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m1wh6"]
+radius = 23.0
+height = 84.0
+
+[node name="TestScene" type="Node2D"]
+script = ExtResource("1_m1wh6")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -2
+y_sort_enabled = true
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD/////AAABAAAAAAD//wAAAAABAAAAAAD+/wEAAAABAAAAAAD//wIAAAABAAAAAAD//wMAAAABAAAAAAAAAAQAAAABAAAAAAAAAAMAAAABAAAAAAAAAAIAAAABAAAAAAAAAAEAAAABAAAAAAABAAAAAAABAAAAAAAAAP//AAABAAAAAAAAAAAAAAABAAAAAAD//wEAAAABAAAAAAAAAP7/AAABAAAAAAAAAP3/AAABAAAAAAAAAPz/AAABAAAAAAD///3/AAABAAAAAAD///z/AAABAAAAAAD+//3/AAABAAAAAAD+//7/AAABAAAAAAD9////AAABAAAAAAD9/wAAAAABAAAAAAD9/wEAAAABAAAAAAD+/wIAAAABAAAAAAD9/wMAAAABAAAAAAD+/wAAAAABAAAAAAD+////AAABAAAAAAD///7/AAABAAAAAAD+/wQAAAABAAAAAAD+/wUAAAABAAAAAAD//wYAAAABAAAAAAD//wcAAAABAAAAAAAAAAYAAAABAAAAAAD//wUAAAABAAAAAAD//wQAAAABAAAAAAD+/wMAAAABAAAAAAAAAAUAAAABAAAAAAABAAQAAAABAAAAAAABAAMAAAABAAAAAAACAAIAAAABAAAAAAABAAEAAAABAAAAAAACAAAAAAABAAAAAAABAAIAAAABAAAAAAABAP//AAABAAAAAAABAP7/AAABAAAAAAACAAEAAAABAAAAAAACAAMAAAABAAAAAAADAAIAAAABAAAAAAADAAAAAAABAAAAAAACAP//AAABAAAAAAACAP7/AAABAAAAAAABAP3/AAABAAAAAAABAPz/AAABAAAAAAAAAPv/AAABAAAAAAAAAPr/AAABAAAAAAD///v/AAABAAAAAAD///r/AAABAAAAAAD+//v/AAABAAAAAAD+//z/AAABAAAAAAD9//3/AAABAAAAAAD9//7/AAABAAAAAAD8////AAABAAAAAAD8/wAAAAABAAAAAAD8/wEAAAABAAAAAAD8/wIAAAABAAAAAAD8/wMAAAABAAAAAAD9/wIAAAABAAAAAAD9/wQAAAABAAAAAAD8/wUAAAABAAAAAAD9/wYAAAABAAAAAAD9/wcAAAABAAAAAAD+/wcAAAABAAAAAAD//wgAAAABAAAAAAD+/wYAAAABAAAAAAD9/wUAAAABAAAAAAD//wkAAAABAAAAAAAAAAgAAAABAAAAAAAAAAcAAAABAAAAAAABAAYAAAABAAAAAAABAAUAAAABAAAAAAACAAQAAAABAAAAAAADAAQAAAABAAAAAAADAAMAAAABAAAAAAADAAEAAAABAAAAAAAEAAAAAAABAAAAAAADAP//AAABAAAAAAADAP7/AAABAAAAAAACAP3/AAABAAAAAAACAPz/AAABAAAAAAABAPv/AAABAAAAAAABAPr/AAABAAAAAAAAAPn/AAABAAAAAAAAAPj/AAABAAAAAAD///n/AAABAAAAAAD+//n/AAABAAAAAAD+//r/AAABAAAAAAD9//v/AAABAAAAAAD9//z/AAABAAAAAAD8//3/AAABAAAAAAD8//7/AAABAAAAAAD7////AAABAAAAAAD7/wAAAAABAAAAAAD7/wEAAAABAAAAAAD7/wIAAAABAAAAAAD7/wMAAAABAAAAAAD7/wQAAAABAAAAAAD7/wUAAAABAAAAAAD8/wYAAAABAAAAAAD8/wcAAAABAAAAAAD9/wgAAAABAAAAAAD8/wQAAAABAAAAAAD9/wkAAAABAAAAAAD+/woAAAABAAAAAAD+/wkAAAABAAAAAAD//woAAAABAAAAAAD+/wgAAAABAAAAAAD//wsAAAABAAAAAAAAAAoAAAABAAAAAAAAAAkAAAABAAAAAAABAAgAAAABAAAAAAABAAcAAAABAAAAAAACAAgAAAABAAAAAAACAAcAAAABAAAAAAADAAYAAAABAAAAAAACAAUAAAABAAAAAAACAAYAAAABAAAAAAD//w0AAAABAAAAAAAAAAwAAAABAAAAAAAAAAsAAAABAAAAAAD+/wsAAAABAAAAAAD//wwAAAABAAAAAAABAAoAAAABAAAAAAABAAkAAAABAAAAAAADAAUAAAABAAAAAAAEAAQAAAABAAAAAAAEAAMAAAABAAAAAAAEAAIAAAABAAAAAAAEAAEAAAABAAAAAAAFAAIAAAABAAAAAAD///f/AAABAAAAAAD///j/AAABAAAAAAD6/wEAAAABAAAAAAD6/wIAAAABAAAAAAD6/wMAAAABAAAAAAD//w4AAAACAAAAAAD+/w0AAAACAAAAAAD+/wwAAAACAAAAAAD9/wsAAAACAAAAAAD9/woAAAACAAAAAAD8/wkAAAACAAAAAAD8/wgAAAACAAAAAAD7/wcAAAACAAAAAAD7/wYAAAACAAAAAAD6/wUAAAACAAAAAAD6/wQAAAACAAAAAAD5/wMAAAACAAAAAAAAAA4AAAADAAAAAAAAAA0AAAADAAAAAAABAAwAAAADAAAAAAABAAsAAAADAAAAAAACAAoAAAADAAAAAAACAAkAAAADAAAAAAADAAgAAAADAAAAAAADAAcAAAADAAAAAAAEAAYAAAADAAAAAAAEAAUAAAADAAAAAAAFAAQAAAADAAAAAAAFAAMAAAADAAAAAAD//xEAAAABAAAAAAAAABIAAAABAAAAAAAAABEAAAABAAAAAAABABAAAAABAAAAAAABAA8AAAABAAAAAAACAA4AAAABAAAAAAACAA0AAAABAAAAAAADAAwAAAABAAAAAAADAAsAAAABAAAAAAAEAAoAAAABAAAAAAAEAAkAAAABAAAAAAAFAAgAAAABAAAAAAAFAAcAAAABAAAAAAAGAAYAAAABAAAAAAD+/xEAAAABAAAAAAD+/xAAAAABAAAAAAD9/w8AAAABAAAAAAD9/w4AAAABAAAAAAD8/w0AAAABAAAAAAD8/wwAAAABAAAAAAD7/wsAAAABAAAAAAD7/woAAAABAAAAAAD6/wkAAAABAAAAAAD6/wgAAAABAAAAAAD5/wcAAAABAAAAAAD5/wYAAAABAAAAAAD+/xIAAAABAAAAAAD9/xEAAAABAAAAAAD9/xAAAAABAAAAAAD8/w8AAAABAAAAAAD8/w4AAAABAAAAAAD7/w0AAAABAAAAAAD7/wwAAAABAAAAAAD6/wsAAAABAAAAAAD6/woAAAABAAAAAAD5/wkAAAABAAAAAAD5/wgAAAABAAAAAAD4/wcAAAABAAAAAAD4/wgAAAACAAAAAAD4/wkAAAACAAAAAAD5/woAAAACAAAAAAD5/wsAAAACAAAAAAD6/wwAAAACAAAAAAD6/w0AAAACAAAAAAD7/w4AAAACAAAAAAD7/w8AAAACAAAAAAD8/xAAAAACAAAAAAD8/xEAAAACAAAAAAD9/xIAAAACAAAAAAD9/xMAAAACAAAAAAD+/xMAAAACAAAAAAD//xIAAAABAAAAAAD//xMAAAABAAAAAAD//xQAAAACAAAAAAD//xUAAAACAAAAAAAAABQAAAABAAAAAAAAABMAAAABAAAAAAABABIAAAABAAAAAAABABEAAAABAAAAAAACABAAAAABAAAAAAACAA8AAAABAAAAAAADAA4AAAABAAAAAAADAA0AAAABAAAAAAAEAAwAAAABAAAAAAAEAAsAAAABAAAAAAAFAAoAAAABAAAAAAAFAAkAAAABAAAAAAAGAAgAAAABAAAAAAAGAAcAAAABAAAAAAAHAAgAAAADAAAAAAAGAAkAAAADAAAAAAAGAAoAAAADAAAAAAAFAAsAAAADAAAAAAAFAAwAAAADAAAAAAA=")
+tile_set = ExtResource("1_3jrdw")
+script = ExtResource("2_7ngua")
+
+[node name="Player" parent="." instance=ExtResource("3_v0jcd")]
+position = Vector2(-260, 99)
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(3, 3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="HeadsUpDisplay" parent="Player/CanvasLayer" node_paths=PackedStringArray("target") instance=ExtResource("10_pjq1b")]
+target = NodePath("../../../NavigationRegion2D/Tower")
+
+[node name="AllyMinion" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_m1wh6")]
+position = Vector2(-274, 78)
+target = NodePath("../NavigationRegion2D/Tower")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_vgf4w")
+
+[node name="Tower" type="StaticBody2D" parent="NavigationRegion2D"]
+z_index = -1
+position = Vector2(97, -16)
+script = ExtResource("5_pjq1b")
+projectile_spawn_position = Vector2(0, -80)
+projectile_direction = -135.0
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NavigationRegion2D/Tower"]
+texture_filter = 1
+position = Vector2(0, -48)
+sprite_frames = SubResource("SpriteFrames_8w0vv")
+autoplay = "default"
+frame_progress = 0.38676894
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/Tower"]
+polygon = PackedVector2Array(0, -16, 32, 0, 0, 16, -32, 0)
+
+[node name="Cooldown" type="Timer" parent="NavigationRegion2D/Tower"]
+wait_time = 2.0
+autostart = true
+
+[node name="HealthComponent" type="Node" parent="NavigationRegion2D/Tower"]
+script = ExtResource("7_7ngua")
+max_health = 100.0
+metadata/_custom_type_script = "uid://dy7bgaj0gx0io"
+
+[node name="Hurtbox" type="Area2D" parent="NavigationRegion2D/Tower" node_paths=PackedStringArray("health_component")]
+position = Vector2(0, -20)
+script = ExtResource("8_v0jcd")
+health_component = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://b3rp8l1hmj0ob"
+
+[node name="HurtboxShape" type="CollisionShape2D" parent="NavigationRegion2D/Tower/Hurtbox"]
+position = Vector2(0, 16)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_m1wh6")
+
+[connection signal="timeout" from="NavigationRegion2D/Tower/Cooldown" to="NavigationRegion2D/Tower" method="_on_cooldown_timeout"]
+[connection signal="health_depleted" from="NavigationRegion2D/Tower/HealthComponent" to="." method="_on_base_health_depleted"]

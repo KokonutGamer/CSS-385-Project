@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://br2vw24cf2naj"]
+
+[sub_resource type="SystemFont" id="SystemFont_1a2ex"]
+font_names = PackedStringArray("Fantasy")
+
+[resource]
+default_font = SubResource("SystemFont_1a2ex")
+default_font_size = 90

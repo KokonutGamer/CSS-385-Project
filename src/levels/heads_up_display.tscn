@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cktifyra5t566"]
+
+[ext_resource type="Script" uid="uid://dci2uppftbqsm" path="res://src/levels/heads_up_display.gd" id="1_tw6gi"]
+
+[node name="HeadsUpDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tw6gi")
+
+[node name="SpawnButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 990.0
+offset_top = 505.0
+offset_right = 1080.0
+offset_bottom = 593.0
+
+[connection signal="pressed" from="SpawnButton" to="." method="_on_spawn_button_pressed"]
