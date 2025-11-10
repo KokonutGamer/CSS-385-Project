@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bh5444jejx23j"]
+[gd_scene load_steps=56 format=3 uid="uid://bh5444jejx23j"]
 
 [ext_resource type="Texture2D" uid="uid://dyi3eqjymdqvh" path="res://assets/sprites/minion-walk-sheet.png" id="1_8glim"]
 [ext_resource type="Script" uid="uid://ds8l31gxvq7cx" path="res://src/allies/ally_minion.gd" id="1_rhxhi"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ddr4p6k3btdbm" path="res://assets/sprites/minion-attack-sheet.png" id="3_3jegg"]
 [ext_resource type="Texture2D" uid="uid://b5vdo65k4od4h" path="res://assets/sprites/minion-weapon-sheet.png" id="4_ar12u"]
 [ext_resource type="Script" uid="uid://0g20nv7ng1jp" path="res://src/util/state_machine.gd" id="7_hwlfh"]
+[ext_resource type="Script" uid="uid://cy2hx323a5kvg" path="res://src/allies/chasing.gd" id="8_at6hk"]
+[ext_resource type="Script" uid="uid://dy7bgaj0gx0io" path="res://src/core/health_component.gd" id="9_miquy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p6pu4"]
 radius = 5.0990195
@@ -1155,8 +1157,9 @@ texture = ExtResource("1_8glim")
 hframes = 4
 vframes = 8
 
-[node name="MinionAnimation" type="Node" parent="."]
+[node name="MinionAnimation" type="Node" parent="." node_paths=PackedStringArray("animation_tree")]
 script = ExtResource("2_khete")
+animation_tree = NodePath("../AnimationTree")
 
 [node name="Weapon" type="Node2D" parent="."]
 
@@ -1169,3 +1172,13 @@ vframes = 4
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("7_hwlfh")
 metadata/_custom_type_script = "uid://0g20nv7ng1jp"
+
+[node name="Chasing" type="Node" parent="StateMachine"]
+script = ExtResource("8_at6hk")
+metadata/_custom_type_script = "uid://2x7363a43o7c"
+
+[node name="HealthComponent" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_miquy")
+MAX_HEALTH = 30.0
+metadata/_custom_type_script = "uid://dy7bgaj0gx0io"

@@ -787,5 +787,6 @@ animation_tree = NodePath("../AnimationTree")
 [node name="HealthComponent" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("6_kqtwu")
+MAX_HEALTH = 50.0
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

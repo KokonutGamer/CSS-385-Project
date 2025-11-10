@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=4 uid="uid://jnht6gwl5wv6"]
+[gd_scene load_steps=19 format=4 uid="uid://jnht6gwl5wv6"]
 
 [ext_resource type="TileSet" uid="uid://vl5bxjxn266l" path="res://resources/tilesets/grassy.tres" id="1_g2w4a"]
 [ext_resource type="Script" uid="uid://4wvgw7ka7lks" path="res://src/levels/tile_map_layer.gd" id="2_4n1no"]
 [ext_resource type="PackedScene" uid="uid://dijmjd3qxp12f" path="res://src/player/player.tscn" id="2_q7s53"]
 [ext_resource type="Script" uid="uid://cgkm4q5wbos34" path="res://src/towers/tower.gd" id="4_81352"]
+[ext_resource type="PackedScene" uid="uid://bh5444jejx23j" path="res://src/allies/ally_minion.tscn" id="4_n7s7a"]
 [ext_resource type="Texture2D" uid="uid://by132kdgo8p56" path="res://assets/sprites/red-moon-tower-sheet.png" id="4_oktae"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_81352"]
@@ -106,6 +107,15 @@ metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
+
+[node name="AllyMinion" parent="." instance=ExtResource("4_n7s7a")]
+position = Vector2(-274, 78)
+
+[node name="AllyMinion2" parent="." instance=ExtResource("4_n7s7a")]
+position = Vector2(-256, 67)
+
+[node name="AllyMinion3" parent="." instance=ExtResource("4_n7s7a")]
+position = Vector2(-293, 66)
 
 [node name="Tower" type="StaticBody2D" parent="."]
 position = Vector2(97, -16)

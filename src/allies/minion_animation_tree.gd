@@ -9,9 +9,6 @@ var last_facing_direction := Vector2(0, -1)
 func _physics_process(_delta: float) -> void:
 	var idle = !minion.velocity
 	
-	animation_tree.set("parameters/conditions/idle", idle)
-	animation_tree.set("parameters/conditions/walk", !idle)
-	
 	if !idle:
 		last_facing_direction = minion.velocity.normalized()
 	
