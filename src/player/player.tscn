@@ -731,11 +731,11 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kqtwu"]
 advance_mode = 2
-advance_condition = &"idle"
+advance_expression = "!velocity"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6eyoc"]
 advance_mode = 2
-advance_condition = &"walk"
+advance_expression = "velocity"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_atpat"]
 states/Idle/node = ExtResource("2_dyp2m")
@@ -744,6 +744,7 @@ states/Start/position = Vector2(138, 176.66666)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_xhtjm")
 states/Walk/position = Vector2(314.22223, 90)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_atpat"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_kqtwu"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_6eyoc")]
+graph_offset = Vector2(3, 40)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_yewv4")
@@ -766,11 +767,10 @@ libraries = {
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_atpat")
+advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/idle = false
-parameters/conditions/walk = true
 parameters/Idle/blend_position = Vector2(0, 0)
-parameters/Walk/blend_position = Vector2(-0.011683822, 0.039123654)
+parameters/Walk/blend_position = Vector2(-0.0007304549, 0.8371607)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2

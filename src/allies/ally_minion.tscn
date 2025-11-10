@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bh5444jejx23j"]
+[gd_scene load_steps=49 format=3 uid="uid://bh5444jejx23j"]
 
 [ext_resource type="Texture2D" uid="uid://dyi3eqjymdqvh" path="res://assets/sprites/minion-walk-sheet.png" id="1_8glim"]
 [ext_resource type="Script" uid="uid://dsad6s16joab8" path="res://src/player/hurtbox.gd" id="1_w64wn"]
@@ -1017,6 +1017,29 @@ _data = {
 &"walk-up-right": SubResource("Animation_hwlfh")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ar12u"]
+animation = &"attack-down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rhxhi"]
+animation = &"attack-up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hwlfh"]
+animation = &"attack-left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_at6hk"]
+animation = &"attack-right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_miquy"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_ar12u")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_rhxhi")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_hwlfh")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_at6hk")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_w64wn"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w8vlm"]
@@ -1067,20 +1090,22 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3jegg"]
 advance_mode = 2
-advance_condition = &"idle"
+advance_expression = "!velocity"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ar12u"]
 advance_mode = 2
-advance_condition = &"walk"
+advance_expression = "velocity"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_khete"]
+states/Attack/node = SubResource("AnimationNodeBlendSpace2D_miquy")
+states/Attack/position = Vector2(576.3333, 179)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_w64wn")
 states/Idle/position = Vector2(377.44446, 184)
 states/Start/position = Vector2(177.33333, 124.66667)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_khete")
 states/Walk/position = Vector2(378, 52.666668)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_w64wn"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_3jegg"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_ar12u")]
-graph_offset = Vector2(36, -13)
+graph_offset = Vector2(81, -5)
 
 [node name="AllyMinion" type="CharacterBody2D"]
 
@@ -1102,9 +1127,9 @@ libraries = {
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_khete")
+advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/idle = false
-parameters/conditions/walk = true
+parameters/Attack/blend_position = Vector2(0, 0)
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(-0.0007304549, 0.0020877123)
 
