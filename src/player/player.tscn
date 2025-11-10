@@ -780,7 +780,7 @@ texture = ExtResource("3_dyp2m")
 hframes = 4
 vframes = 5
 
-[node name="PlayerAnimation" type="Node2D" parent="." node_paths=PackedStringArray("animation_tree")]
+[node name="PlayerAnimation" type="Node" parent="." node_paths=PackedStringArray("animation_tree")]
 script = ExtResource("3_76oj4")
 animation_tree = NodePath("../AnimationTree")
 
