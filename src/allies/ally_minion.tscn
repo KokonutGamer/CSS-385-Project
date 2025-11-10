@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bh5444jejx23j"]
+[gd_scene load_steps=59 format=3 uid="uid://bh5444jejx23j"]
 
 [ext_resource type="Texture2D" uid="uid://dyi3eqjymdqvh" path="res://assets/sprites/minion-walk-sheet.png" id="1_8glim"]
 [ext_resource type="Script" uid="uid://ds8l31gxvq7cx" path="res://src/allies/ally_minion.gd" id="1_rhxhi"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bd7q0nxwd4o4v" path="res://src/allies/minion_animation_tree.gd" id="2_khete"]
 [ext_resource type="Texture2D" uid="uid://ddr4p6k3btdbm" path="res://assets/sprites/minion-attack-sheet.png" id="3_3jegg"]
 [ext_resource type="Texture2D" uid="uid://b5vdo65k4od4h" path="res://assets/sprites/minion-weapon-sheet.png" id="4_ar12u"]
+[ext_resource type="Script" uid="uid://csn56l1a70oqy" path="res://src/core/hitbox.gd" id="7_15f31"]
 [ext_resource type="Script" uid="uid://0g20nv7ng1jp" path="res://src/util/state_machine.gd" id="7_hwlfh"]
 [ext_resource type="Script" uid="uid://cy2hx323a5kvg" path="res://src/allies/chasing.gd" id="8_at6hk"]
 [ext_resource type="Script" uid="uid://dy7bgaj0gx0io" path="res://src/core/health_component.gd" id="9_miquy"]
@@ -80,6 +81,42 @@ tracks/4/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Weapon/Hitbox/HitboxShape:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Weapon/Hitbox/HitboxShape:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5707964]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Weapon/Hitbox/HitboxShape:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7.5, 6)]
+}
 
 [sub_resource type="Animation" id="Animation_w8vlm"]
 resource_name = "attack-down"
@@ -144,6 +181,42 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Weapon/Hitbox/HitboxShape:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Weapon/Hitbox/HitboxShape:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5707964]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Weapon/Hitbox/HitboxShape:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7.5, 6)]
 }
 
 [sub_resource type="Animation" id="Animation_5tqi5"]
@@ -210,6 +283,42 @@ tracks/4/keys = {
 "update": 1,
 "values": [5, 6, 7, 8]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Weapon/Hitbox/HitboxShape:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Weapon/Hitbox/HitboxShape:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Weapon/Hitbox/HitboxShape:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-11, -14)]
+}
 
 [sub_resource type="Animation" id="Animation_aq0om"]
 resource_name = "attack-right"
@@ -275,6 +384,42 @@ tracks/4/keys = {
 "update": 1,
 "values": [15, 16, 17, 18]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Weapon/Hitbox/HitboxShape:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Weapon/Hitbox/HitboxShape:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, 6)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Weapon/Hitbox/HitboxShape:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5707964]
+}
 
 [sub_resource type="Animation" id="Animation_s8g1p"]
 resource_name = "attack-up"
@@ -339,6 +484,42 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [10, 11, 12, 13]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Weapon/Hitbox/HitboxShape:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Weapon/Hitbox/HitboxShape:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5707964]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Weapon/Hitbox/HitboxShape:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, -16)]
 }
 
 [sub_resource type="Animation" id="Animation_miquy"]
@@ -1124,6 +1305,9 @@ states/Walk/position = Vector2(378, 52.666668)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_w64wn"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_3jegg"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_ar12u"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_rhxhi"), "Walk", "Attack", SubResource("AnimationNodeStateMachineTransition_hwlfh"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_at6hk")]
 graph_offset = Vector2(2, -3)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15f31"]
+size = Vector2(18, 25)
+
 [node name="AllyMinion" type="CharacterBody2D"]
 script = ExtResource("1_rhxhi")
 
@@ -1170,6 +1354,16 @@ position = Vector2(0, -7)
 hframes = 5
 vframes = 4
 
+[node name="Hitbox" type="Area2D" parent="Weapon"]
+script = ExtResource("7_15f31")
+metadata/_custom_type_script = "uid://csn56l1a70oqy"
+
+[node name="HitboxShape" type="CollisionShape2D" parent="Weapon/Hitbox"]
+position = Vector2(-7.5, 6)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_15f31")
+disabled = true
+
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("7_hwlfh")
 metadata/_custom_type_script = "uid://0g20nv7ng1jp"
@@ -1185,7 +1379,6 @@ metadata/_custom_type_script = "uid://2x7363a43o7c"
 [node name="HealthComponent" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("9_miquy")
-MAX_HEALTH = 30.0
 metadata/_custom_type_script = "uid://dy7bgaj0gx0io"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

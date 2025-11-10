@@ -150,7 +150,6 @@ autostart = true
 
 [node name="HealthComponent" type="Node" parent="NavigationRegion2D/Tower"]
 script = ExtResource("7_7ngua")
-MAX_HEALTH = 100.0
 metadata/_custom_type_script = "uid://dy7bgaj0gx0io"
 
 [connection signal="timeout" from="NavigationRegion2D/Tower/Cooldown" to="NavigationRegion2D/Tower" method="_on_cooldown_timeout"]
