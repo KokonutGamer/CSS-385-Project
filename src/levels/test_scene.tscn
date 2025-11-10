@@ -126,10 +126,6 @@ zoom = Vector2(3, 3)
 position = Vector2(-274, 78)
 target = NodePath("../NavigationRegion2D/Tower")
 
-[node name="AllyMinion2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_m1wh6")]
-position = Vector2(-256, 67)
-target = NodePath("../NavigationRegion2D/Tower")
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_vgf4w")
 
