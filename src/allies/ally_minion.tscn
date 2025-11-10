@@ -1,6 +1,7 @@
-[gd_scene load_steps=49 format=3 uid="uid://bh5444jejx23j"]
+[gd_scene load_steps=53 format=3 uid="uid://bh5444jejx23j"]
 
 [ext_resource type="Texture2D" uid="uid://dyi3eqjymdqvh" path="res://assets/sprites/minion-walk-sheet.png" id="1_8glim"]
+[ext_resource type="Script" uid="uid://ds8l31gxvq7cx" path="res://src/allies/ally_minion.gd" id="1_rhxhi"]
 [ext_resource type="Script" uid="uid://dsad6s16joab8" path="res://src/player/hurtbox.gd" id="1_w64wn"]
 [ext_resource type="Script" uid="uid://bd7q0nxwd4o4v" path="res://src/allies/minion_animation_tree.gd" id="2_khete"]
 [ext_resource type="Texture2D" uid="uid://ddr4p6k3btdbm" path="res://assets/sprites/minion-attack-sheet.png" id="3_3jegg"]
@@ -1096,6 +1097,18 @@ advance_expression = "!velocity"
 advance_mode = 2
 advance_expression = "velocity"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rhxhi"]
+advance_mode = 2
+advance_expression = "attacking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hwlfh"]
+advance_mode = 2
+advance_expression = "attacking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_at6hk"]
+advance_mode = 2
+advance_expression = "!attacking"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_khete"]
 states/Attack/node = SubResource("AnimationNodeBlendSpace2D_miquy")
 states/Attack/position = Vector2(576.3333, 179)
@@ -1104,10 +1117,11 @@ states/Idle/position = Vector2(377.44446, 184)
 states/Start/position = Vector2(177.33333, 124.66667)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_khete")
 states/Walk/position = Vector2(378, 52.666668)
-transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_w64wn"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_3jegg"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_ar12u")]
-graph_offset = Vector2(81, -5)
+transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_w64wn"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_3jegg"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_ar12u"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_rhxhi"), "Walk", "Attack", SubResource("AnimationNodeStateMachineTransition_hwlfh"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_at6hk")]
+graph_offset = Vector2(2, -3)
 
 [node name="AllyMinion" type="CharacterBody2D"]
+script = ExtResource("1_rhxhi")
 
 [node name="FloorCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p6pu4")
@@ -1129,7 +1143,7 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_khete")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Attack/blend_position = Vector2(0, 0)
+parameters/Attack/blend_position = Vector2(-0.038619578, -0.7286012)
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(-0.0007304549, 0.0020877123)
 
