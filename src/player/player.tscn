@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dyqrhccfobwbp" path="res://assets/sprites/template-idle-sheet.png" id="1_rp718"]
 [ext_resource type="Script" uid="uid://capt4cs370xiy" path="res://src/player/player.gd" id="1_yewv4"]
 [ext_resource type="AnimationNodeBlendSpace2D" uid="uid://c63n5ylmndgvs" path="res://resources/animations/player_idle_blend.tres" id="2_dyp2m"]
-[ext_resource type="Script" uid="uid://dsad6s16joab8" path="res://src/player/hurtbox.gd" id="2_o822w"]
+[ext_resource type="Script" uid="uid://b3rp8l1hmj0ob" path="res://src/core/hurtbox.gd" id="2_o822w"]
 [ext_resource type="Script" uid="uid://ods2y6tg7ba5" path="res://src/player/player_animation_tree.gd" id="3_76oj4"]
 [ext_resource type="Texture2D" uid="uid://r2ywruddutay" path="res://assets/sprites/template-walk-sheet.png" id="3_dyp2m"]
 [ext_resource type="Script" uid="uid://dy7bgaj0gx0io" path="res://src/core/health_component.gd" id="6_kqtwu"]
@@ -752,9 +752,10 @@ script = ExtResource("1_yewv4")
 [node name="FloorCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_yewv4")
 
-[node name="Hurtbox" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
 collision_mask = 3
 script = ExtResource("2_o822w")
+health_component = NodePath("../HealthComponent")
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(0, -6)
@@ -787,6 +788,5 @@ animation_tree = NodePath("../AnimationTree")
 [node name="HealthComponent" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("6_kqtwu")
-MAX_HEALTH = 50.0
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

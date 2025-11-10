@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dyi3eqjymdqvh" path="res://assets/sprites/minion-walk-sheet.png" id="1_8glim"]
 [ext_resource type="Script" uid="uid://ds8l31gxvq7cx" path="res://src/allies/ally_minion.gd" id="1_rhxhi"]
-[ext_resource type="Script" uid="uid://dsad6s16joab8" path="res://src/player/hurtbox.gd" id="1_w64wn"]
+[ext_resource type="Script" uid="uid://b3rp8l1hmj0ob" path="res://src/core/hurtbox.gd" id="1_w64wn"]
 [ext_resource type="Script" uid="uid://bd7q0nxwd4o4v" path="res://src/allies/minion_animation_tree.gd" id="2_khete"]
 [ext_resource type="Texture2D" uid="uid://ddr4p6k3btdbm" path="res://assets/sprites/minion-attack-sheet.png" id="3_3jegg"]
 [ext_resource type="Texture2D" uid="uid://b5vdo65k4od4h" path="res://assets/sprites/minion-weapon-sheet.png" id="4_ar12u"]
@@ -1314,9 +1314,9 @@ script = ExtResource("1_rhxhi")
 [node name="FloorCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p6pu4")
 
-[node name="Hurtbox" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
 script = ExtResource("1_w64wn")
-metadata/_custom_type_script = "uid://dsad6s16joab8"
+health_component = NodePath("../HealthComponent")
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(0, -4)
