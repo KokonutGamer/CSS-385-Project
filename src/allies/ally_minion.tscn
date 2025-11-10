@@ -1,9 +1,10 @@
-[gd_scene load_steps=43 format=3 uid="uid://bh5444jejx23j"]
+[gd_scene load_steps=44 format=3 uid="uid://bh5444jejx23j"]
 
 [ext_resource type="Texture2D" uid="uid://dyi3eqjymdqvh" path="res://assets/sprites/minion-walk-sheet.png" id="1_8glim"]
 [ext_resource type="Script" uid="uid://dsad6s16joab8" path="res://src/player/hurtbox.gd" id="1_w64wn"]
 [ext_resource type="Script" uid="uid://bd7q0nxwd4o4v" path="res://src/allies/minion_animation_tree.gd" id="2_khete"]
 [ext_resource type="Texture2D" uid="uid://ddr4p6k3btdbm" path="res://assets/sprites/minion-attack-sheet.png" id="3_3jegg"]
+[ext_resource type="Texture2D" uid="uid://b5vdo65k4od4h" path="res://assets/sprites/minion-weapon-sheet.png" id="4_ar12u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p6pu4"]
 radius = 5.0990195
@@ -90,6 +91,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Weapon/WeaponSprite:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Weapon/WeaponSprite:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_w64wn"]
@@ -747,6 +772,30 @@ tracks/2/keys = {
 "update": 1,
 "values": [4]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Weapon/WeaponSprite:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_ar12u")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Weapon/WeaponSprite:frame")
+tracks/4/interp = 0
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
 
 [sub_resource type="Animation" id="Animation_5tqi5"]
 resource_name = "attack-left"
@@ -787,6 +836,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Weapon/WeaponSprite:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_ar12u")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Weapon/WeaponSprite:frame")
+tracks/4/interp = 0
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8]
 }
 
 [sub_resource type="Animation" id="Animation_s8g1p"]
@@ -829,6 +902,30 @@ tracks/2/keys = {
 "update": 1,
 "values": [4]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Weapon/WeaponSprite:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_ar12u")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Weapon/WeaponSprite:frame")
+tracks/4/interp = 0
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13]
+}
 
 [sub_resource type="Animation" id="Animation_aq0om"]
 resource_name = "attack-right"
@@ -869,6 +966,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Weapon/WeaponSprite:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_ar12u")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Weapon/WeaponSprite:frame")
+tracks/4/interp = 0
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [15, 16, 17, 18]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w64wn"]
@@ -996,3 +1117,11 @@ vframes = 8
 
 [node name="MinionAnimation" type="Node" parent="."]
 script = ExtResource("2_khete")
+
+[node name="Weapon" type="Node2D" parent="."]
+
+[node name="WeaponSprite" type="Sprite2D" parent="Weapon"]
+texture_filter = 1
+position = Vector2(0, -7)
+hframes = 5
+vframes = 4
