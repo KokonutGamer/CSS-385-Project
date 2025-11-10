@@ -101,7 +101,7 @@ tile_set = ExtResource("1_g2w4a")
 script = ExtResource("2_4n1no")
 
 [node name="Player" parent="." instance=ExtResource("2_q7s53")]
-position = Vector2(97, 54)
+position = Vector2(-260, 99)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

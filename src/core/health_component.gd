@@ -12,4 +12,5 @@ func damage(attack: Attack) -> void:
 	health -= attack.attack_damage
 
 	if health <= 0:
+		# TODO implement a signal for an entity dying
 		print("This entity has died:", get_parent())
