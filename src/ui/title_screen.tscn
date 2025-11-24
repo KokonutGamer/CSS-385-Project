@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm8r78mdrx4dx"]
+[gd_scene load_steps=7 format=3 uid="uid://dm8r78mdrx4dx"]
 
 [ext_resource type="Script" uid="uid://cf3u4rol8xf4i" path="res://src/ui/title_screen.gd" id="1_fgkus"]
 [ext_resource type="AudioStream" uid="uid://dii7bbeia8b41" path="res://assets/audio/music/the-noble-wanderer.wav" id="2_de0mb"]
 [ext_resource type="AudioStream" uid="uid://dcvb0vu2tp2kk" path="res://assets/audio/sfx/start-sound.wav" id="3_ub6rd"]
+[ext_resource type="PackedScene" uid="uid://cix23qfmjo14m" path="res://src/ui/fade.tscn" id="4_cfp8e"]
 
 [sub_resource type="SystemFont" id="SystemFont_1a2ex"]
 font_names = PackedStringArray("Fantasy")
@@ -60,8 +61,9 @@ stream = ExtResource("3_ub6rd")
 volume_db = -16.0
 
 [node name="StartTimer" type="Timer" parent="."]
-wait_time = 3.0
 one_shot = true
+
+[node name="Fade" parent="." instance=ExtResource("4_cfp8e")]
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]

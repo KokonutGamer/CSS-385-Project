@@ -1,5 +1,6 @@
 extends Control
 
+@onready var fade: CanvasLayer = $Fade
 
 func _ready() -> void:
 	var cfg := ConfigFile.new()
@@ -24,8 +25,8 @@ func _on_start_button_pressed() -> void:
 	$TitleScreenAudioStreamPlayer.stop()
 	$StartSound.play()
 	$StartTimer.start()
-	
 	await $StartTimer.timeout
+	await fade.fade(1.0, 3.0).finished
 	get_tree().change_scene_to_file("res://src/levels/test_scene.tscn")
 	
 func _on_settings_button_pressed() -> void:
