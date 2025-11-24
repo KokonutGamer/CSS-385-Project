@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://qugddhwo2j3d"]
+[gd_scene load_steps=5 format=3 uid="uid://qugddhwo2j3d"]
 
 [ext_resource type="Script" uid="uid://b825vawde3778" path="res://src/ui/victory_screen.gd" id="1_af5s3"]
 [ext_resource type="Theme" uid="uid://br2vw24cf2naj" path="res://resources/themes/font_theme.tres" id="1_g8dsx"]
+[ext_resource type="AudioStream" uid="uid://dlnwg8dbpkgmu" path="res://assets/audio/music/snazzy-jubilee.wav" id="3_nmhdo"]
 
 [sub_resource type="SystemFont" id="SystemFont_af5s3"]
 
@@ -61,5 +62,10 @@ offset_bottom = -99.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Main Menu"
+
+[node name="VictoryScreenMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nmhdo")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
