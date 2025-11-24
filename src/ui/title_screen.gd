@@ -21,6 +21,11 @@ func _ready() -> void:
 	print("Controls loaded!")
 
 func _on_start_button_pressed() -> void:
+	$TitleScreenAudioStreamPlayer.stop()
+	$StartSound.play()
+	$StartTimer.start()
+	
+	await $StartTimer.timeout
 	get_tree().change_scene_to_file("res://src/levels/test_scene.tscn")
 	
 func _on_settings_button_pressed() -> void:
