@@ -21,34 +21,52 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fgkus")
 
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TitleScreenAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_de0mb")
+volume_db = -16.0
+autoplay = true
+
+[node name="StartSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ub6rd")
+volume_db = -16.0
+
+[node name="StartTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Fade" parent="." instance=ExtResource("4_cfp8e")]
+
 [node name="Title" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -45.5
-offset_bottom = 45.5
+layout_mode = 0
+offset_left = 255.0
+offset_top = 278.0
+offset_right = 896.0
+offset_bottom = 369.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_fgkus")
 text = "Isekai Castle Crusaders"
 horizontal_alignment = 1
 
-[node name="StartButton" type="Button" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 273.0
-offset_top = 444.0
-offset_right = 448.0
-offset_bottom = 519.0
+offset_top = 448.0
+offset_right = 1152.0
+offset_bottom = 500.0
+alignment = 1
+
+[node name="StartButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
 text = "Start"
 
-[node name="SettingsButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 722.0
-offset_top = 439.0
-offset_right = 897.0
-offset_bottom = 514.0
+[node name="SettingsButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
 text = "Settings"
 
 [node name="TitleScreenAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
