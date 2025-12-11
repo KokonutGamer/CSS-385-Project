@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://bh5444jejx23j"]
+[gd_scene load_steps=60 format=3 uid="uid://bh5444jejx23j"]
 
 [ext_resource type="Texture2D" uid="uid://dyi3eqjymdqvh" path="res://assets/sprites/minion-walk-sheet.png" id="1_8glim"]
 [ext_resource type="Script" uid="uid://ds8l31gxvq7cx" path="res://src/allies/ally_minion.gd" id="1_rhxhi"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cy2hx323a5kvg" path="res://src/allies/chasing.gd" id="8_at6hk"]
 [ext_resource type="Script" uid="uid://dy7bgaj0gx0io" path="res://src/core/health_component.gd" id="9_miquy"]
 [ext_resource type="Script" uid="uid://mbpcncaqb553" path="res://src/allies/attacking.gd" id="9_q583r"]
+[ext_resource type="Script" uid="uid://ijemlqgp5uhw" path="res://src/core/health_bar.gd" id="12_ylq88"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p6pu4"]
 radius = 5.0990195
@@ -1382,3 +1383,14 @@ script = ExtResource("9_miquy")
 metadata/_custom_type_script = "uid://dy7bgaj0gx0io"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = -12.0
+offset_top = -23.0
+offset_right = 13.0
+offset_bottom = -18.0
+theme_override_font_sizes/font_size = 16
+step = 1.0
+show_percentage = false
+script = ExtResource("12_ylq88")
