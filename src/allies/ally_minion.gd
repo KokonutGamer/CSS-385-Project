@@ -12,6 +12,7 @@ const MOVEMENT_SPEED := 28.0
 var attacking := false
 
 var current_state : State
+var offset : Vector2
 
 func _ready() -> void:
 	add_to_group("allies")
@@ -20,9 +21,14 @@ func _ready() -> void:
 	hitbox.collision_mask = 1 << 3
 	hurtbox.collision_layer = 1 << 1
 	hurtbox.collision_mask = 1 << 2
+	
+	# calculate random offset to avoid staggering
+	var radius = 32.0
+	var angle = randf() * TAU
+	offset = Vector2(cos(angle), sin(angle)) * radius
 
 func move_towards(move_target: Vector2, _delta: float) -> void:
-	var dir := move_target - global_position
+	var dir := move_target + offset - global_position
 	if dir.length() > 0.01:
 		velocity = dir.normalized() * MOVEMENT_SPEED
 	else:

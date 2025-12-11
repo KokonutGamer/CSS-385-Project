@@ -1332,7 +1332,7 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_khete")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Attack/blend_position = Vector2(-0.038619578, -0.7286012)
+parameters/Attack/blend_position = Vector2(-0.02197802, -0.44508672)
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(-0.0007304549, 0.0020877123)
 
