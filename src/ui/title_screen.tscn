@@ -39,7 +39,6 @@ volume_db = -16.0
 one_shot = true
 
 [node name="Fade" parent="." instance=ExtResource("4_cfp8e")]
-visible = false
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0

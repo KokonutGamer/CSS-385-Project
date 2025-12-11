@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var hitbox : Hitbox = $Hitbox
 @onready var hurtbox : Hurtbox = $Hurtbox
-@export var SPEED = 64
+@export var SPEED = 96
 
 var dir : float
 var spawn_position : Vector2
@@ -25,7 +25,6 @@ func _ready() -> void:
 func find_closest_target() -> Node2D:
 	var candidates = []
 	for node in get_tree().get_nodes_in_group("allies"):
-		# Optionally, filter only active nodes
 		if node.is_inside_tree():
 			candidates.append(node)
 
@@ -41,7 +40,6 @@ func find_closest_target() -> Node2D:
 			closest = node
 			min_distance = dist
 	
-	print("Found target >:)")
 	return closest
 
 func _physics_process(_delta: float) -> void:
