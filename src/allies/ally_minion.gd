@@ -14,6 +14,7 @@ var attacking := false
 var current_state : State
 
 func _ready() -> void:
+	add_to_group("allies")
 	health_component.health_depleted.connect(queue_free)
 	hitbox.collision_layer = 1
 	hitbox.collision_mask = 1 << 3
