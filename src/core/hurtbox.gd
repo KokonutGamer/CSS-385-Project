@@ -16,4 +16,3 @@ func _on_area_entered(area: Area2D) -> void:
 	if hitbox:
 		health_component.health -= hitbox.damage
 		print(owner.name + " is under attack!")
-		print("%s took %s damage" % [owner.name, hitbox.damage])

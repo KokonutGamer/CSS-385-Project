@@ -2,9 +2,6 @@ extends CharacterBody2D
 class_name AllyMinion
 
 @onready var navigation_agent : NavigationAgent2D = $NavigationAgent2D
-@onready var health_component : HealthComponent = $HealthComponent
-@onready var hurtbox : Hurtbox = $Hurtbox
-@onready var hitbox : Hitbox = $"Weapon/Hitbox"
 @export var target : StaticBody2D
 
 const MOVEMENT_SPEED := 28.0
@@ -12,23 +9,9 @@ const MOVEMENT_SPEED := 28.0
 var attacking := false
 
 var current_state : State
-var offset : Vector2
 
-func _ready() -> void:
-	add_to_group("allies")
-	health_component.health_depleted.connect(queue_free)
-	hitbox.collision_layer = 1
-	hitbox.collision_mask = 1 << 3
-	hurtbox.collision_layer = 1 << 1
-	hurtbox.collision_mask = 1 << 2
-	
-	# calculate random offset to avoid staggering
-	var radius = 32.0
-	var angle = randf() * TAU
-	offset = Vector2(cos(angle), sin(angle)) * radius
-
-func move_towards(move_target: Vector2, _delta: float) -> void:
-	var dir := move_target + offset - global_position
+func move_towards(target: Vector2, delta: float) -> void:
+	var dir := target - global_position
 	if dir.length() > 0.01:
 		velocity = dir.normalized() * MOVEMENT_SPEED
 	else:

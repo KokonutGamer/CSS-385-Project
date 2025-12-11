@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cktifyra5t566"]
+[gd_scene load_steps=2 format=3 uid="uid://cktifyra5t566"]
 
 [ext_resource type="Script" uid="uid://dci2uppftbqsm" path="res://src/levels/heads_up_display.gd" id="1_tw6gi"]
-[ext_resource type="Script" uid="uid://c05sgqg3boros" path="res://src/levels/morale_gauge.gd" id="2_qir5s"]
 
 [node name="HeadsUpDisplay" type="Control"]
 layout_mode = 3
@@ -14,13 +13,5 @@ offset_left = 990.0
 offset_top = 505.0
 offset_right = 1080.0
 offset_bottom = 593.0
-
-[node name="MoraleGauge" type="ProgressBar" parent="."]
-layout_mode = 0
-offset_left = 55.0
-offset_top = 568.0
-offset_right = 678.0
-offset_bottom = 595.0
-script = ExtResource("2_qir5s")
 
 [connection signal="pressed" from="SpawnButton" to="." method="_on_spawn_button_pressed"]

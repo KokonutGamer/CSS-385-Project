@@ -108,7 +108,6 @@ radius = 23.0
 height = 84.0
 
 [node name="TestScene" type="Node2D"]
-y_sort_enabled = true
 script = ExtResource("1_m1wh6")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -136,10 +135,10 @@ position = Vector2(-274, 78)
 target = NodePath("../NavigationRegion2D/Tower")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-y_sort_enabled = true
 navigation_polygon = SubResource("NavigationPolygon_vgf4w")
 
 [node name="Tower" type="StaticBody2D" parent="NavigationRegion2D"]
+z_index = -1
 position = Vector2(97, -16)
 script = ExtResource("5_pjq1b")
 projectile_spawn_position = Vector2(0, -80)
