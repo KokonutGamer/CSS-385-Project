@@ -1,6 +1,6 @@
 extends ProgressBar
 
-@export var morale_per_second: float = 2.0
+@export var morale_per_second: float = 6.0
 @export var max_morale: float = 100.0
 
 var current_morale: float = 0.0
