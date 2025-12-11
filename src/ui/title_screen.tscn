@@ -69,19 +69,5 @@ custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 text = "Settings"
 
-[node name="TitleScreenAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_de0mb")
-volume_db = -16.0
-autoplay = true
-
-[node name="StartSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_ub6rd")
-volume_db = -16.0
-
-[node name="StartTimer" type="Timer" parent="."]
-one_shot = true
-
-[node name="Fade" parent="." instance=ExtResource("4_cfp8e")]
-
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
